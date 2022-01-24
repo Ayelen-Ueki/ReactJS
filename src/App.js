@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import NavBar from './Componentes/NavBar';
 
 const yellowColor = "yellow";
 
-class App extends Component {
-  render(){
+const App = () => {
   return (
     <div className="App">
-      <NavBar color={yellowColor} />
+      <NavBar color={yellowColor} 
+      img='./Imagenes/Logo.png'
+      />
     </div>
-  );};
+  );
 };
 
 export default App;
