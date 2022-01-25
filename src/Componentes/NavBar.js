@@ -1,56 +1,72 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, Collapse, Nav } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownToggle, DropdownMenu} from 'reactstrap';
 import './NavBar.css';
+import Logo from "../Imagenes/Logo.png"
+import Carrito from "../Imagenes/Carrito.png"
 
-const NavBar = (img, color) => {
-    <div className="Navigation" style={{ background: "yellow", border: `10px solid ${color}` }}>
-        <Navbar
-            color="faded"
-            light
-        >
-            <NavbarBrand
-                className="me-auto"
-                href="/"
+const NavBar = ({ color }) => {
+    return (
+        <div className="Navigation" style={{ background: `${color}`}}>  
+            <Navbar
+                expand="md"
+                light
             >
-                <img src={img} alt="logo" />
-                Feelin Pastelería
-            </NavbarBrand>
-            <NavbarToggler
-                className="me-2"
-                onClick={function noRefCheck() { }}
-            />
-            <Collapse navbar>
-                <Nav navbar>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Inicio
-                        </NavLink>
+                <NavbarBrand href="/" className='navBar'>
+                    <img src={Logo} alt="logo" className='logo' />
+                    <h1> Feelin Pastelería </h1>
+                </NavbarBrand>
+                <NavbarToggler onClick={function noRefCheck() { }} />
+                <Collapse navbar>
+                    <Nav
+                        className="me-auto"
+                        navbar
+                    >
+                        <NavItem>
+                            <NavLink href="/components/">
+                                Nosotros
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="https://github.com/reactstrap/reactstrap">
+                                Recetas
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/components/">
+                                Contacto
+                            </NavLink>
+                        </NavItem>
+                        <UncontrolledDropdown
+                            inNavbar
+                            nav
+                        >
+                            <DropdownToggle
+                                caret
+                                nav
+                            >
+                                Antojos
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    Alfajores y Cookies
+                                </DropdownItem>
+                                <DropdownItem>
+                                    Tortas
+                                </DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem>
+                                    Boxes
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                    </Nav>
+                    <NavItem className='carrito'>
+                    <img src={Carrito} alt="logo" className='carrito' />
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Nosotros
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Antojos
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Recetas
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Contacto
-                        </NavLink>
-                    </NavItem>
-
-                </Nav>
-            </Collapse>
-        </Navbar>
-    </div>
+                </Collapse>
+            </Navbar>
+        </div>
+    );
 };
 
 export default NavBar;

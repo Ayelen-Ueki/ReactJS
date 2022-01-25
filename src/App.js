@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import NavBar from './Componentes/NavBar';
 
-const yellowColor = "yellow";
+const salmonColor = "salmon";
 
 const App = () => {
   return (
     <div className="App">
-      <NavBar color={yellowColor} 
+      <NavBar color={salmonColor} 
       img='./Imagenes/Logo.png'
       />
     </div>

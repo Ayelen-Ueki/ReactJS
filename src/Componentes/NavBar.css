@@ -1,0 +1,24 @@
+li{
+    list-style: none;
+}
+
+.Navigation{
+    display: flex;
+    position: sticky;
+}
+
+.navBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo{
+    padding: 1rem;
+    width: 20%;
+}
+
+.carrito{
+    width: 20%;
+}
+
