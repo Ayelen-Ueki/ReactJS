@@ -1,8 +1,8 @@
 import React from 'react';
-import'./Antojos.css';
-import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap';
+import {Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
+import ItemCount from '../ItemCount/ItemCount';
 
-const Antojos = ({img, cardTitle, cardDescription}) => {
+const ItemListContainer = ({img, cardTitle, cardDescription}) => {
     return(
   <Card>
     <CardImg
@@ -18,12 +18,10 @@ const Antojos = ({img, cardTitle, cardDescription}) => {
       <CardText>
         {cardDescription}
       </CardText>
-      <Button>
-        Comprar
-      </Button>
+      <ItemCount/>
     </CardBody>
   </Card>
     )
 }
 
-export default Antojos;
+export default ItemListContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownToggle, DropdownMenu} from 'reactstrap';
 import './NavBar.css';
-import Carrito from '../Carrito';
+import CartWidget from '../CartWidget';
 import Logo from "../Imagenes/Logo.png"
 
 
@@ -61,7 +61,7 @@ const NavBar = ({ color }) => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                        <Carrito/>
+                        <CartWidget/>
                 </Collapse>
             </Navbar>
         </div>
