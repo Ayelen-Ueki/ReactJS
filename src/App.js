@@ -9,21 +9,24 @@ import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
 const salmonColor = "salmon";
 
 const App = () => {
-    return (
+  return (
     <div className="App">
       <NavBar color={salmonColor} />
       <div className="Antojos">
         <ItemListContainer className="Productos"
+          greetings='Opción 1'
           img={VeganCookies}
           cardTitle='Vegan Cookies'
           cardDescription='Deliciosas cookies con chips de "chocolate" 100% veganas'
         />
         <ItemListContainer className="Productos"
+          greetings='Opción 2'
           img={Alfajorcitos}
           cardTitle='Alfajorcitos'
           cardDescription='Alfajorcitos de masa sablee con dulce de leche, espolvoreados con azúcar impalpable'
         />
         <ItemListContainer className="Productos"
+          greetings='Opción 3'
           img={BoxPersonalizado}
           cardTitle='Boxes'
           cardDescription='Cajas personalizables para regalar o regalarte!'

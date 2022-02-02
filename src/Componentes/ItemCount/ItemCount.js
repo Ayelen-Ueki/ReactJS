@@ -2,40 +2,34 @@ import React, { useState } from 'react';
 import './ItemCount.css';
 
 
-const ItemCount = () => {
 
-    const [stock, setStock] = useState (9);
-    const [initial, setInitial] = useState (1);
+const ItemCount = ({stock, initial}) => {
+    stock = 9;
+    initial = 1;
+
+    const [items, setItems] = useState(initial);
 
     const onAdd = () => {
-        if ((stock >= 1) && (stock <= 9)) {
-            setInitial (initial + 1);
-            setStock (stock - 1);    
-        }
-        else {
-            alert("Lo sentimos, ya no hay stock");
+        if (items < stock) {
+            setItems(items + 1);
         }
     }
-    const substract = () => {
-        if ((stock >= 1) && (stock <= 9)) {
-            setInitial (initial - 1);
-            setStock (stock + 1);    
+    const onDeduct = () => {
+        if (items > initial) {
+            setItems(items - 1);
         }
-        else {
-            alert("No es posible ingresar números negativos");
-        }  
     }
 
-    return(
+    return (
         <div>
-        <p> Stock: {stock} </p>
-        <div className='items'>
-            <button onClick={substract}> - </button>
-            <p>{initial}</p>
-            <button onClick={onAdd}> + </button>
+            <p> Stock: {stock} </p>
+            <div className='items'>
+                <button onClick={onDeduct}> - </button>
+                <p>{items}</p>
+                <button onClick={onAdd}> + </button>
+            </div>
         </div>
-    </div>
-    )
+    );
 }
 
-export default ItemCount; 
+export default ItemCount;
