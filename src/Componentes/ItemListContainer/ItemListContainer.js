@@ -1,26 +1,29 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
-import ItemCount from '../ItemCount/ItemCount';
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+// import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListContainer = ({ img, cardTitle, cardDescription, greetings }) => {
+// img, cardTitle, cardDescription, CardImg
+const ItemListContainer = ({greetings, data }) => {
   return (
     <div>
       <h4> {greetings} </h4>
       <Card>
-        <CardImg
+        {/* <CardImg
           alt="Card image cap"
           src={img}
           top
           width="100%"
-        />
+        /> */}
         <CardBody>
           <CardTitle tag="h5">
-            {cardTitle}
+            {/* {cardTitle} */}
+            {data.login}
           </CardTitle>
           <CardText>
-            {cardDescription}
+            {/* {cardDescription} */}
+            {data.url}
           </CardText>
-          <ItemCount/>
+          {/* <ItemCount/> */}
         </CardBody>
       </Card>
     </div>

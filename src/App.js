@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar';
-import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
-import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
-import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
-import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
+// import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
+// import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
+// import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
+// import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
+import ItemList from './Componentes/ItemList/ItemList';
 
 const salmonColor = "salmon";
 
@@ -13,7 +14,7 @@ const App = () => {
     <div className="App">
       <NavBar color={salmonColor} />
       <div className="Antojos">
-        <ItemListContainer className="Productos"
+        {/* <ItemListContainer className="Productos"
           greetings='Opción 1'
           img={VeganCookies}
           cardTitle='Vegan Cookies'
@@ -30,7 +31,8 @@ const App = () => {
           img={BoxPersonalizado}
           cardTitle='Boxes'
           cardDescription='Cajas personalizables para regalar o regalarte!'
-        />
+        /> */}
+        <ItemList/>
       </div>
     </div>
   );
