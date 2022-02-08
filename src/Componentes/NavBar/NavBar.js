@@ -1,13 +1,14 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownToggle, DropdownMenu} from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import './NavBar.css';
 import CartWidget from '../CartWidget';
 import Logo from "../Imagenes/Logo.png"
+import { Link } from 'react-router-dom';
 
 
 const NavBar = ({ color }) => {
     return (
-        <div className="Navigation" style={{ background: `${color}`}}>  
+        <div className="Navigation" style={{ background: `${color}` }}>
             <Navbar
                 expand="md"
                 light
@@ -22,21 +23,27 @@ const NavBar = ({ color }) => {
                         className="me-auto"
                         navbar
                     >
-                        <NavItem>
-                            <NavLink href="/components/">
-                                Nosotros
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                Recetas
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/components/">
-                                Contacto
-                            </NavLink>
-                        </NavItem>
+                        <Link to='/Nosotros'>
+                            <NavItem>
+                                <NavLink href="/components/">
+                                    Nosotros
+                                </NavLink>
+                            </NavItem>
+                        </Link>
+                        <Link to='/Recetas'>
+                            <NavItem>
+                                <NavLink href="https://github.com/reactstrap/reactstrap">
+                                    Recetas
+                                </NavLink>
+                            </NavItem>
+                        </Link>
+                        <Link to='/Contacto'>
+                            <NavItem>
+                                <NavLink href="/components/">
+                                    Contacto
+                                </NavLink>
+                            </NavItem>
+                        </Link>
                         <UncontrolledDropdown
                             inNavbar
                             nav
@@ -48,20 +55,26 @@ const NavBar = ({ color }) => {
                                 Antojos
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
-                                    Alfajores y Cookies
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Tortas
-                                </DropdownItem>
+                                <Link to='/AlfajoresyCookies'>
+                                    <DropdownItem>
+                                        Alfajores y Cookies
+                                    </DropdownItem>
+                                </Link>
+                                <Link to='/Tortas'>
+                                    <DropdownItem>
+                                        Tortas
+                                    </DropdownItem>
+                                </Link>
                                 <DropdownItem divider />
+                                <Link to='/Boxes'>
                                 <DropdownItem>
                                     Boxes
                                 </DropdownItem>
+                                </Link>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                        <CartWidget/>
+                    <CartWidget />
                 </Collapse>
             </Navbar>
         </div>

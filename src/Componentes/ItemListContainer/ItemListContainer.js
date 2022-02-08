@@ -1,19 +1,19 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
 // import ItemCount from '../ItemCount/ItemCount';
+import './ItemListContainer.css'
 
 // img, cardTitle, cardDescription, CardImg
 const ItemListContainer = ({greetings, data }) => {
   return (
-    <div>
+    <div className='CardContainer'>
       <h4> {greetings} </h4>
-      <Card>
-        {/* <CardImg
+      <Card className='ItemListContainer'>
+        <CardImg
           alt="Card image cap"
-          src={img}
+          src={data.avatar_url}
           top
-          width="100%"
-        /> */}
+        />
         <CardBody>
           <CardTitle tag="h5">
             {/* {cardTitle} */}

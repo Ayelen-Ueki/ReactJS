@@ -6,15 +6,17 @@ import NavBar from './Componentes/NavBar/NavBar';
 // import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
 // import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
 import ItemList from './Componentes/ItemList/ItemList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const salmonColor = "salmon";
 
 const App = () => {
   return (
-    <div className="App">
-      <NavBar color={salmonColor} />
-      <div className="Antojos">
-        {/* <ItemListContainer className="Productos"
+    <Router>
+      <div className="App">
+        <NavBar color={salmonColor} />
+        <div className="Antojos">
+          {/* <ItemListContainer className="Productos"
           greetings='Opción 1'
           img={VeganCookies}
           cardTitle='Vegan Cookies'
@@ -32,9 +34,12 @@ const App = () => {
           cardTitle='Boxes'
           cardDescription='Cajas personalizables para regalar o regalarte!'
         /> */}
-        <ItemList/>
+        </div>
       </div>
-    </div>
+      <Routes>
+        <Route path="/AlfajoresyCookies" element={<ItemList />}/>
+      </Routes>
+    </Router >
   );
 };
 
