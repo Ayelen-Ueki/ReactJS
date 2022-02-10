@@ -5,7 +5,7 @@ import NavBar from './Componentes/NavBar/NavBar';
 // import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
 // import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
 // import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
-import ItemList from './Componentes/ItemList/ItemList';
+import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const salmonColor = "salmon";
@@ -37,7 +37,7 @@ const App = () => {
         </div>
       </div>
       <Routes>
-        <Route path="/AlfajoresyCookies" element={<ItemList />}/>
+        <Route path="/AlfajoresyCookies" element={<ItemDetailContainer/>}/>
       </Routes>
     </Router >
   );

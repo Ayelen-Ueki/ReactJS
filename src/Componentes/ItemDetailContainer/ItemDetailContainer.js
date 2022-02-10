@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// import Item from './Item';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-const ItemList = () => {
+const ItemDetailContainer = () => {
 
     const [antojos, setAntojos] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         fetch('https://api.github.com/users')
@@ -21,7 +21,7 @@ const ItemList = () => {
             {isLoading ? <p>Is loading...</p> : <div> {antojos.map((antojos) => {
                 return (
                     <div key={antojos.id}>
-                        <ItemListContainer data={antojos} />
+                        <ItemDetail data={antojos} />
                     </div>)
 
 
@@ -33,4 +33,4 @@ const ItemList = () => {
     );
 };
 
-export default ItemList;
+export default ItemDetailContainer;
