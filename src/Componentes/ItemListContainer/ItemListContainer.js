@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemListContainer = ({greetings,img, cardTitle, cardDescription }) => {
   return (
-    <div className='CardContainer'>
+    <div>
       <h4> {greetings} </h4>
       <Card className='ItemListContainer'>
         <CardImg

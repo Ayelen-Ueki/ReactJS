@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { Link } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
-    const [antojos, setAntojos] = useState([]);
+    const [antojos, getItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
         fetch('https://api.github.com/users')
             .then((response) => response.json())
-            .then((json) => setAntojos(json));
+            .then((json) => getItems(json));
         setTimeout(() => {
             setIsLoading(false)
         }, 2000)
@@ -21,15 +22,15 @@ const ItemDetailContainer = () => {
             {isLoading ? <p>Is loading...</p> : <div> {antojos.map((antojos) => {
                 return (
                     <div key={antojos.id}>
-                        <ItemDetail data={antojos} />
+                        <Link to={`/detail/${antojos.id}`} classNae='Link'>
+                            <ItemDetail data={antojos} />
+                            </Link>
                     </div>)
-
-
             })}
-            </div>
+        </div>
             }
 
-        </div>
+        </div >
     );
 };
 

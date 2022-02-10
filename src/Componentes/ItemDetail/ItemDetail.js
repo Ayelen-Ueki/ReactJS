@@ -2,10 +2,9 @@ import './ItemDetail.css';
 import React from 'react';
 import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
 
-const ItemDetail = ({greetings, data }) => {
+const ItemDetail = ({ data }) => {
   return (
     <div className='CardContainer'>
-      <h4> {greetings} </h4>
       <Card className='ItemDetail'>
         <CardImg
           alt="Card image cap"

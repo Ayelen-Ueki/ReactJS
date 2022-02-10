@@ -55,7 +55,7 @@ const NavBar = ({ color }) => {
                                 Antojos
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <Link to='/AlfajoresyCookies'>
+                                <Link to='/'>
                                     <DropdownItem>
                                         Alfajores y Cookies
                                     </DropdownItem>
