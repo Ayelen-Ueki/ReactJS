@@ -9,3 +9,8 @@
   grid-row-gap: 1rem;
   padding: 1rem;
 }
+
+img{
+  padding: 5rem;
+  width: 70%;
+}

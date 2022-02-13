@@ -37,10 +37,10 @@ const NavBar = ({ color }) => {
                                 </NavLink>
                             </NavItem>
                         </Link>
-                        <Link to='/Contacto'>
+                        <Link to='/detail'>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    Contacto
+                                    Detalle
                                 </NavLink>
                             </NavItem>
                         </Link>
@@ -52,30 +52,25 @@ const NavBar = ({ color }) => {
                                 caret
                                 nav
                             >
-                                Antojos
+                                Categorías
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <Link to='/'>
+                                <Link to='/Categories/:login'>
                                     <DropdownItem>
-                                        Alfajores y Cookies
+                                        Empieza con M
                                     </DropdownItem>
                                 </Link>
-                                <Link to='/Tortas'>
-                                    <DropdownItem>
-                                        Tortas
-                                    </DropdownItem>
-                                </Link>
-                                <DropdownItem divider />
+                                {/* <DropdownItem divider />
                                 <Link to='/Boxes'>
-                                <DropdownItem>
-                                    Boxes
-                                </DropdownItem>
-                                </Link>
+                                    <DropdownItem>
+                                        Boxes
+                                    </DropdownItem>
+                                </Link> */}
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <CartWidget />
                 </Collapse>
+                <CartWidget />
             </Navbar>
         </div>
     );

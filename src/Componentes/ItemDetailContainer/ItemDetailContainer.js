@@ -18,16 +18,16 @@ const ItemDetailContainer = () => {
     }, [])
 
     return (
-        <div>
+        <div className='Cards'>
             {isLoading ? <p>Is loading...</p> : <div> {antojos.map((antojos) => {
                 return (
                     <div key={antojos.id}>
-                        <Link to={`/detail/${antojos.id}`} classNae='Link'>
+                        <Link to={`/detail/${antojos.id}`} className='Link'>
                             <ItemDetail data={antojos} />
-                            </Link>
+                        </Link>
                     </div>)
             })}
-        </div>
+            </div>
             }
 
         </div >

@@ -8,21 +8,21 @@ const DetailContainer = () => {
 
     let id = useParams();
     let detailId = id.id;
-    console.log(detailId)
 
     useEffect(() => {
         axios(`https://api.github.com/users/${detailId}`).then((res) => setDetail(res.data));
     }, [detailId])
 
     return (
-    <div>
-        {detail.map((antojos)=>{
-            return(
-                <div key={antojos.id}>
-                    <ItemDetail data={antojos}/>
-                </div>
-            )})}
-    </div>
+        <div>
+            {detail.map((antojos) => {
+                return (
+                    <div key={antojos.id}>
+                        <ItemDetail data={antojos} />
+                    </div>
+                )
+            })}
+        </div>
     )
 }
 
