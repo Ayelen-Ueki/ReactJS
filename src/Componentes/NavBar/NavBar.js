@@ -55,11 +55,11 @@ const NavBar = ({ color }) => {
                                 Categorías
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <Link to='/Categories/login'>
+                                {/* <Link to='/Categories/login'> */}
                                     <DropdownItem>
                                         Empieza con M
                                     </DropdownItem>
-                                </Link>
+                                {/* </Link> */}
                                 {/* <DropdownItem divider />
                                 <Link to='/Boxes'>
                                     <DropdownItem>

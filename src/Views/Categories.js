@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import ItemDetail from '../Componentes/ItemDetail/ItemDetail';
 
 const Categories = () => {
-    const [name, setName] = useState([]);
+    const [name, setName] = useState({});
 
     let login = useParams();
     let detailName = login.login;

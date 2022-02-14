@@ -10,7 +10,7 @@ import DetailContainer from './Views/DetailContainer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
-import Categories from './Views/Categories'
+// import Categories from './Views/Categories'
 const salmonColor = "salmon";
 
 const App = () => {
@@ -42,7 +42,7 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" element={<ItemDetailContainer />} />
-        <Route path="/categories/:login" element={<Categories />} />
+        {/* <Route path="/categories/:login" element={<Categories />} /> */}
         <Route path="/detail/:login" element={<DetailContainer />} />
       </Routes>
     </Router >
