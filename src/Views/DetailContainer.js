@@ -4,24 +4,20 @@ import { useParams } from 'react-router';
 import ItemDetail from '../Componentes/ItemDetail/ItemDetail';
 
 const DetailContainer = () => {
-    const [detail, setDetail] = useState([]);
+    const [detail, setDetail] = useState({});
 
-    let id = useParams();
-    let detailId = id.id;
+    let login = useParams();
+    let detailLogin = login.login;
+
+    console.log(login)
 
     useEffect(() => {
-        axios(`https://api.github.com/users/${detailId}`).then((res) => setDetail(res.data));
-    }, [detailId])
+        axios(`https://api.github.com/users/${detailLogin}`).then((res) => setDetail(res.data));
+    }, [detailLogin])
 
     return (
         <div>
-            {detail.map((antojos) => {
-                return (
-                    <div key={antojos.id}>
-                        <ItemDetail data={antojos} />
-                    </div>
-                )
-            })}
+            <ItemDetail data={detail} />
         </div>
     )
 }

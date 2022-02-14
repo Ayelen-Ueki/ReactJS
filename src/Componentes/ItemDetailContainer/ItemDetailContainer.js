@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
             {isLoading ? <p>Is loading...</p> : <div> {antojos.map((antojos) => {
                 return (
                     <div key={antojos.id}>
-                        <Link to={`/detail/${antojos.id}`} className='Link'>
+                        <Link to={`/detail/${antojos.login}`} className='Link'>
                             <ItemDetail data={antojos} />
                         </Link>
                     </div>)

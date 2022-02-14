@@ -9,15 +9,16 @@ const Categories = () => {
     let login = useParams();
     let detailName = login.login;
 
-    console.log(detailName)
-
     useEffect(() => {
         axios(`https://api.github.com/users/${detailName}`).then((res) => setName(res.data));
     }, [detailName])
 
+
     let mCharacters = name.find(function (character){
         return character.startsWith("m")
     })
+
+    console.log(detailName)
 
     return (
         <div>
