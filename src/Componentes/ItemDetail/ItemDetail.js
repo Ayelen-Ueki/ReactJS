@@ -1,27 +1,29 @@
-import './ItemDetail.css';
 import React from 'react';
 import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
+import ItemCount from '../ItemCount/ItemCount';
 
-const ItemDetail = ({ data }) => {
+const ItemDetail = ({greetings,img, cardTitle, cardDescription}) => {
   return (
-    <div className='CardContainer'>
-      <Card className='ItemDetail'>
+    <div>
+      <h4> {greetings} </h4>
+      <Card className='ItemListContainer'>
         <CardImg
           alt="Card image cap"
-          src={data.avatar_url}
+          src={img}
           top
         />
         <CardBody>
           <CardTitle tag="h5">
-            {data.login}
+            {cardTitle}
           </CardTitle>
           <CardText>
-            {data.url}
+            {cardDescription}
           </CardText>
+          <ItemCount/>
         </CardBody>
       </Card>
     </div>
-  )
+  );
 }
 
 export default ItemDetail;

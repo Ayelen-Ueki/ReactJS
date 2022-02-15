@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from 'react';
-// import ItemDetail from '../ItemDetail/ItemDetail';
+// import ItemDetails from '../ItemDetails/ItemDetails';
 // import { Link } from 'react-router-dom';
 
 // const ItemDetailContainer = () => {
@@ -23,7 +23,7 @@
 //                 return (
 //                     <div key={antojos.id}>
 //                         <Link to={`/detail/${antojos.login}`} className='Link'>
-//                             <ItemDetail data={antojos} />
+//                             <ItemDetails data={antojos} />
 //                         </Link>
 //                     </div>)
 //             })}
