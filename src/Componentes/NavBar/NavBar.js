@@ -3,7 +3,7 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, Un
 import './NavBar.css';
 import CartWidget from '../CartWidget';
 import Logo from "../Imagenes/Logo.png"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const NavBar = ({ color }) => {
@@ -23,27 +23,27 @@ const NavBar = ({ color }) => {
                         className="me-auto"
                         navbar
                     >
-                        <Link to='/Nosotros'>
+                        {/* <Link to='/Nosotros'> */}
                             <NavItem>
                                 <NavLink href="/components/">
                                     Nosotros
                                 </NavLink>
                             </NavItem>
-                        </Link>
-                        <Link to='/Recetas'>
+                        {/* </Link> */}
+                        {/* <Link to='/Recetas'> */}
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">
                                     Recetas
                                 </NavLink>
                             </NavItem>
-                        </Link>
-                        <Link to='/detail'>
+                        {/* </Link>
+                        <Link to='/detail'> */}
                             <NavItem>
                                 <NavLink href="/components/">
                                     Detalle
                                 </NavLink>
                             </NavItem>
-                        </Link>
+                        {/* </Link> */}
                         <UncontrolledDropdown
                             inNavbar
                             nav
