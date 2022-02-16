@@ -19,7 +19,7 @@ const ItemDetail = ({greetings,img, cardTitle, cardDescription}) => {
           <CardText>
             {cardDescription}
           </CardText>
-          <ItemCount/>
+          <ItemCount />
         </CardBody>
       </Card>
     </div>

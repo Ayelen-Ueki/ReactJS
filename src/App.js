@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar';
-import ItemCount from './Componentes/ItemCount/ItemCount';
-// import ItemDetail from './Componentes/ItemDetail/ItemDetail';
-// import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
-// import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
+import ItemDetail from './Componentes/ItemDetail/ItemDetail';
+import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
+import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
 // import fotoAlfajorcitos from "./Componentes/Imagenes/fotoAlfajorcitos.png";
-// import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
+import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
 // import DetailContainer from './Views/DetailContainer';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
 // import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
 // import Categories from './Views/Categories'
+// import Cart from './Views/Cart';
 const salmonColor = "salmon";
 
 
@@ -20,8 +20,8 @@ const App = () => {
     // <Router>
       <div className="App">
         <NavBar color={salmonColor} />
-        {/* <div className="Antojos"> */}
-          {/* <ItemDetail className="Productos"
+        <div className="Antojos"> 
+          <ItemDetail className="Productos"
           greetings='Opción 1'
           img={VeganCookies}
           cardTitle='Vegan Cookies'
@@ -38,19 +38,19 @@ const App = () => {
           img={BoxPersonalizado}
           cardTitle='Boxes'
           cardDescription='Cajas personalizables para regalar o regalarte!'
-        /> */}
-        {/* </div> */}
+        />
+        {/* </div>
         {/* <img src={fotoAlfajorcitos} alt="Alfajorcitos" /> */}
-        <div>
-        <ItemCount/>
+        {/* <div> */}
         </div>
       </div>
       // {/* <Routes>
       //   <Route path="/" element={<ItemDetailContainer />} />
       //   <Route path="/categories/:login" element={<Categories />} />
       //   <Route path="/detail/:login" element={<DetailContainer />} />
+      //   <Route path="/cart" element={<Cart />} />
       // </Routes> */}
-    // </Router >
+    /* // </Router > */
   );
 };
 

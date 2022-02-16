@@ -70,7 +70,9 @@ const NavBar = ({ color }) => {
                         </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
+                {/* <Link to='/cart'>  */}
                 <CartWidget />
+                {/* </Link> */}
             </Navbar>
         </div>
     );
