@@ -1,4 +1,5 @@
 import React from 'react';
+import {ItemProvider} from './ItemsContext';
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar';
 import ItemDetail from './Componentes/ItemDetail/ItemDetail';
@@ -6,37 +7,32 @@ import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
 import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
 // import fotoAlfajorcitos from "./Componentes/Imagenes/fotoAlfajorcitos.png";
 import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
-// import DetailContainer from './Views/DetailContainer';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
-// import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
-// import Categories from './Views/Categories'
-// import Cart from './Views/Cart';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CartContext from './Views/CartContext';
 const salmonColor = "salmon";
+
 
 
 const App = () => {
   return (
-    // <Router>
-      <div className="App">
+    <Router>
+    <ItemProvider>
+      <div className="App"> 
         <NavBar color={salmonColor} />
         <div className="Antojos"> 
           <ItemDetail className="Productos"
           greetings='Opción 1'
           img={VeganCookies}
-          cardTitle='Vegan Cookies'
           cardDescription='Deliciosas cookies con chips de "chocolate" 100% veganas'
         />
         <ItemDetail className="Productos"
           greetings='Opción 2'
           img={Alfajorcitos}
-          cardTitle='Alfajorcitos'
           cardDescription='Alfajorcitos de masa sablee con dulce de leche, espolvoreados con azúcar impalpable'
         />
         <ItemDetail className="Productos"
           greetings='Opción 3'
           img={BoxPersonalizado}
-          cardTitle='Boxes'
           cardDescription='Cajas personalizables para regalar o regalarte!'
         />
         {/* </div>
@@ -44,13 +40,13 @@ const App = () => {
         {/* <div> */}
         </div>
       </div>
-      // {/* <Routes>
-      //   <Route path="/" element={<ItemDetailContainer />} />
-      //   <Route path="/categories/:login" element={<Categories />} />
-      //   <Route path="/detail/:login" element={<DetailContainer />} />
-      //   <Route path="/cart" element={<Cart />} />
-      // </Routes> */}
-    /* // </Router > */
+    </ItemProvider>
+      
+<Routes>
+        <Route path="/" element={<ItemDetail />} />
+        <Route path="/cart" element={<CartContext />} />
+      </Routes>
+</Router >
   );
 };
 

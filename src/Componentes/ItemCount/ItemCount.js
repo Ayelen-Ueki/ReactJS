@@ -1,40 +1,50 @@
+import "./ItemCount.css";
 import React, { useState } from 'react';
-import './ItemCount.css';
-import { Label, Input } from 'reactstrap';
+import { Label, Input } from "reactstrap";
+import { Link } from "react-router-dom";
 
-const ItemCount = () => {
-    const [items, setItems] = useState('');
+const ItemCount = (onAdd, onDeduct, pedido, prodId) => {
 
-    const itemsCount = (e) => {
-        setItems(e.target.value);
-    }
+  const [order, setOrder] = useState ([])
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        if(items < 9){
-            alert("Gracias por tu compra!")
-        }
-        else{
-        alert("No hay suficientes unidades");
-        }
-        setItems('');
-    }
+  const onAddCart = (e) => {
+    setOrder(e.target.value); 
+  };
 
-    return (
+  const onSubmit = (e) => {
+    e.preventDefault(); 
+    console.log(order);
+    setOrder("");
+  };
+
+  return (
+    <div>
+      <form className="Form">
+        <Label for="pedido" className="cantidad">
+          Cantidad
+        </Label>
+        <Input
+          placeholder="Cantidad deseada"
+          value={pedido}
+          onChange={onAddCart}
+        />
         <div>
-            <form className='Form' onSubmit={onSubmit}>
-                <Label for="pedido" className='cantidad'>
-                    Cantidad
-                </Label>
-                <Input
-                    placeholder="Cantidad deseada"
-                    onChange={itemsCount}
-                    value={items}
-                />
-                <button className='button'> Finalizar Compra </button>
-            </form>
+          <button onClick={() => onDeduct(prodId)} value={onDeduct}> - </button>
+          <button onClick={() => onAdd(prodId)} value={onAdd}> + </button>
+          <Link to="/Cart">
+            <button className="button"> Finalizar compra </button>
+          </Link>
         </div>
-    );
-}
+        <div>
+          <Link to="/">
+            <button onClick={onSubmit} value={onAddCart}>
+              Agregar al carrito
+            </button>
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default ItemCount;
