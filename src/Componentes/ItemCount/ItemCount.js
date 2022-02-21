@@ -31,7 +31,7 @@ const ItemCount = (onAdd, onDeduct, pedido, prodId) => {
         <div>
           <button onClick={() => onDeduct(prodId)} value={onDeduct}> - </button>
           <button onClick={() => onAdd(prodId)} value={onAdd}> + </button>
-          <Link to="/Cart">
+          <Link to="/cart">
             <button className="button"> Finalizar compra </button>
           </Link>
         </div>
