@@ -7,8 +7,14 @@ const CartContext = () => {
   return (
     <div>
       {items.map((item) => {
-        return <ItemCard data={item} key={item.id} />;
+        return (
+          <div> 
+        <ItemCard data={item} key={item.id} />;
+        Pedido: {items.pedido}
+        </div>
+        )
       })}
+      
     </div>
   );
 };
