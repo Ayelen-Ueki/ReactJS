@@ -1,35 +1,37 @@
-import React, { useState } from 'react';
-import './ItemCount.css';
+import "./ItemCount.css";
+import { Label, Input } from "reactstrap";
+import { Link } from "react-router-dom";
 
+const ItemCount = ({onAdd, onDeduct, pedido, prodId, onAddCart}) => {
 
-
-const ItemCount = ({stock, initial}) => {
-    stock = 9;
-    initial = 1;
-
-    const [items, setItems] = useState(initial);
-
-    const onAdd = () => {
-        if (items < stock) {
-            setItems(items + 1);
-        }
-    }
-    const onDeduct = () => {
-        if (items > initial) {
-            setItems(items - 1);
-        }
-    }
-
-    return (
+  return (
+    <div>
+      <form className="Form">
+        <Label for="pedido" className="cantidad">
+          Cantidad
+        </Label>
+        <Input
+          placeholder="Cantidad deseada"
+          value={pedido}
+          onChange={onAddCart}
+        />
         <div>
-            <p> Stock: {stock} </p>
-            <div className='items'>
-                <button onClick={onDeduct}> - </button>
-                <p>{items}</p>
-                <button onClick={onAdd}> + </button>
-            </div>
+          <button onClick={() => onDeduct(prodId)}> - </button>
+          <button onClick={() => onAdd(prodId)}> + </button>
+          <Link to="/cart">
+            <button className="button"> Finalizar compra </button>
+          </Link>
         </div>
-    );
-}
+        <div>
+          <Link to="/">
+            <button onClick={onAddCart}>
+              Agregar al carrito
+            </button>
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default ItemCount;

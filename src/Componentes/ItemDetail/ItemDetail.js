@@ -1,27 +1,23 @@
-import './ItemDetail.css';
-import React from 'react';
-import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
+import ItemCount from "../ItemCount/ItemCount";
+import React, { useContext, useState } from "react";
+import { ItemsContext } from "../../ItemsContext";
+import ItemCard from "../ItemCard/ItemCard";
 
-const ItemDetail = ({ data }) => {
+const ItemDetail = () => {
+  const [items, onAdd, onDeduct] = useContext(ItemsContext);
+  const [order, setOrder] = useState([]);
+  const onAddCart = (e) => {
+    setOrder(e.target.value);
+    console.log(order);
+  };
   return (
-    <div className='CardContainer'>
-      <Card className='ItemDetail'>
-        <CardImg
-          alt="Card image cap"
-          src={data.avatar_url}
-          top
-        />
-        <CardBody>
-          <CardTitle tag="h5">
-            {data.login}
-          </CardTitle>
-          <CardText>
-            {data.url}
-          </CardText>
-        </CardBody>
-      </Card>
+    <div>
+      {items.map((item) => {
+        return <ItemCard data={item} key={item.id} />;
+      })}
+      <ItemCount onAdd={onAdd} onDeduct={onDeduct} onAddCart={onAddCart} />
     </div>
-  )
-}
+  );
+};
 
 export default ItemDetail;

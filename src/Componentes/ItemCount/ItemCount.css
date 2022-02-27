@@ -1,5 +1,14 @@
-.items{
+.Form{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad{
+    margin: 1rem;
+}
+
+.button{
+    margin: 1rem;
 }
