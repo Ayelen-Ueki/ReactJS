@@ -1,21 +1,8 @@
 import "./ItemCount.css";
-import React, { useState } from 'react';
 import { Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const ItemCount = (onAdd, onDeduct, pedido, prodId) => {
-
-  const [order, setOrder] = useState ([])
-
-  const onAddCart = (e) => {
-    setOrder(e.target.value); 
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault(); 
-    console.log(order);
-    setOrder("");
-  };
+const ItemCount = ({onAdd, onDeduct, pedido, prodId, onAddCart}) => {
 
   return (
     <div>
@@ -29,15 +16,15 @@ const ItemCount = (onAdd, onDeduct, pedido, prodId) => {
           onChange={onAddCart}
         />
         <div>
-          <button onClick={() => onDeduct(prodId)} value={onDeduct}> - </button>
-          <button onClick={() => onAdd(prodId)} value={onAdd}> + </button>
+          <button onClick={() => onDeduct(prodId)}> - </button>
+          <button onClick={() => onAdd(prodId)}> + </button>
           <Link to="/cart">
             <button className="button"> Finalizar compra </button>
           </Link>
         </div>
         <div>
           <Link to="/">
-            <button onClick={onSubmit} value={onAddCart}>
+            <button onClick={onAddCart}>
               Agregar al carrito
             </button>
           </Link>

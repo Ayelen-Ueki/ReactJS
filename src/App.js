@@ -8,7 +8,7 @@ import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
 // import fotoAlfajorcitos from "./Componentes/Imagenes/fotoAlfajorcitos.png";
 import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CartContext from './Views/CartContext';
+import CartContext from './Componentes/CartContext/CartContext';
 const salmonColor = "salmon";
 
 

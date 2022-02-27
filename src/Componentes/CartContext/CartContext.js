@@ -10,7 +10,7 @@ const CartContext = () => {
         return (
           <div> 
         <ItemCard data={item} key={item.id} />;
-        Pedido: {items.pedido}
+        Pedido: {item.pedido}
         </div>
         )
       })}
