@@ -2,7 +2,7 @@ import "./ItemCount.css";
 import { Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({onAdd, onDeduct, pedido, prodId, onAddCart}) => {
+const ItemCount = ({onAddCart, order, onSubmit, onDeduct}) => {
 
   return (
     <div>
@@ -12,22 +12,21 @@ const ItemCount = ({onAdd, onDeduct, pedido, prodId, onAddCart}) => {
         </Label>
         <Input
           placeholder="Cantidad deseada"
-          value={pedido}
+          value={order}
           onChange={onAddCart}
         />
         <div>
-          <button onClick={() => onDeduct(prodId)}> - </button>
-          <button onClick={() => onAdd(prodId)}> + </button>
-          <Link to="/cart">
-            <button className="button"> Finalizar compra </button>
+          <Link to="/Cart">
+            <button className="button" onClick={onSubmit}> Finalizar compra </button>
           </Link>
         </div>
         <div>
-          <Link to="/">
             <button onClick={onAddCart}>
               Agregar al carrito
             </button>
-          </Link>
+            <button onClick={onDeduct}>
+              Eliminar
+            </button>
         </div>
       </form>
     </div>

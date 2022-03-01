@@ -1,11 +1,11 @@
 import { Card, CardBody, CardTitle, CardText, CardImg } from "reactstrap";
 
-const ItemCard = ({ greetings, img, cardDescription, data}) => {
+const ItemCard = ({ greetings, cardDescription, data}) => {
     return (
       <div>
         <h4> {greetings} </h4>
         <Card className="ItemListContainer">
-          <CardImg alt="Card image cap" src={img} top />
+          <CardImg alt={data.producto} src={data.img} top />
           <CardBody>
             <CardTitle tag="h5">{data.producto}</CardTitle>
             <CardText> ${data.precio}</CardText>

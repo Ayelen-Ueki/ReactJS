@@ -14,7 +14,6 @@ const CartContext = () => {
         </div>
         )
       })}
-      
     </div>
   );
 };

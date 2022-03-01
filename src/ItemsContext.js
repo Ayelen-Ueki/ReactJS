@@ -1,11 +1,35 @@
 import React, { createContext, useState } from "react";
+import VeganCookies from "./Componentes/Imagenes/VeganCookies.png";
+import Alfajorcitos from "./Componentes/Imagenes/Alfajorcitos.png";
+import BoxPersonalizado from "./Componentes/Imagenes/BoxPersonalizado.png";
 
 export const ItemsContext = createContext();
 
 const initialState = [
-  { id: 1, producto: "Cookies", precio: 500, stock: 10, pedido: 0 },
-  { id: 2, producto: "Alfajorcitos", precio: 600, stock: 10, pedido: 0 },
-  { id: 3, producto: "Boxes", precio: 2000, stock: 10, pedido: 0 },
+  {
+    id: 1,
+    img: VeganCookies,
+    producto: "Cookies",
+    precio: 500,
+    stock: 10,
+    pedido: 0,
+  },
+  {
+    id: 2,
+    img: Alfajorcitos,
+    producto: "Alfajorcitos",
+    precio: 600,
+    stock: 10,
+    pedido: 0,
+  },
+  {
+    id: 3,
+    img: BoxPersonalizado,
+    producto: "Boxes",
+    precio: 2000,
+    stock: 10,
+    pedido: 0,
+  },
 ];
 
 export const ItemProvider = ({ children }) => {
