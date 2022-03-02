@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CartContext from "./Componentes/CartContext/CartContext";
 import Nosotros from "./Views/Nosotros";
 import Recetas from "./Views/Recetas";
+import {db} from './Componentes/FirebaseConfig/FirebaseConfig';
 
 const salmonColor = "salmon";
 
