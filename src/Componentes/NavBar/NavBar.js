@@ -11,6 +11,7 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget";
 import Logo from "../Imagenes/Logo.png";
 import { Link } from "react-router-dom";
+import CategoriesList from "../../Views/CategoriesList";
 
 const NavBar = ({ color }) => {
   return (
@@ -28,20 +29,17 @@ const NavBar = ({ color }) => {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <Link to="/Nosotros">Nosotros</Link>
+                  <Link to="/nosotros">Nosotros</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="/Recetas">Recetas</Link>
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  <Link to="/Categories">Categorías</Link>
+                  <Link to="/recetas">Recetas</Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Navbar>
         </div>
-        <Link to="/Cart">
+        <CategoriesList/>
+        <Link to="/cart">
           <CartWidget />
         </Link>
       </Navbar>

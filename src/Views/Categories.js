@@ -1,36 +1,37 @@
-// import React, { useState, useEffect } from "react";
-// import axios from 'axios';
-// import { useParams } from 'react-router';
-// import ItemDetail from '../Componentes/ItemDetail/ItemDetail';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../Componentes/FirebaseConfig/FirebaseConfig";
+import ItemCard from "../Componentes/ItemCard/ItemCard";
 
-// const Categories = () => {
-//     const [name, setName] = useState({});
+const Categories = () => {
+  const [categories, setCategories] = useState([]);
 
-//     let login = useParams();
-//     let detailName = login.login;
+  const { categoria } = useParams();
 
-//     useEffect(() => {
-//         axios(`https://api.github.com/users/${detailName}`).then((res) => setName(res.data));
-//     }, [detailName])
+  useEffect(() => {
+    const getCategories = async () => {
+      const q = query(
+        collection(db, "dulces"),
+        where("categoria", "==", categoria)
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setCategories(docs);
+    };
+    getCategories();
+  }, [categoria]);
 
+  return(
+    <div>
+    {categories.map((data) =>
+    {return <ItemCard categorias={data} key={data.id}/>
+    })};      
+</div> 
+  )
+};
 
-//     let mCharacters = name.find(function (character){
-//         return character.startsWith("m")
-//     })
-
-//     console.log(detailName)
-
-//     return (
-//         <div>
-//             {mCharacters.map((antojos) => {
-//                 return (
-//                     <div key={antojos.id}>
-//                         <ItemDetail data={antojos} />
-//                     </div>
-//                 )
-//             })}
-//         </div>
-//     )
-// }
-
-// export default Categories;
+export default Categories;
