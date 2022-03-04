@@ -4,7 +4,7 @@ import { db } from "../Componentes/FirebaseConfig/FirebaseConfig";
 import ItemCard from "../Componentes/ItemCard/ItemCard";
 
 
-const feelinFirebase = () => {
+const Antojos = () => {
   const [antojos, setAntojos] = useState([]);
   useEffect(() => {
     const getAntojos = async () => {
@@ -27,4 +27,4 @@ const feelinFirebase = () => {
   )
 };
 
-export default feelinFirebase;
+export default Antojos;
