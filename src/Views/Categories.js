@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from "../Componentes/FirebaseConfig/FirebaseConfig";
+import { db } from "../FirebaseConfig/FirebaseConfig";
 import ItemCard from "../Componentes/ItemCard/ItemCard";
 
 const Categories = () => {

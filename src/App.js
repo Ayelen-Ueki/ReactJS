@@ -8,7 +8,7 @@ import CartContext from "./Componentes/CartContext/CartContext";
 import Nosotros from "./Views/Nosotros";
 import Recetas from "./Views/Recetas";
 import Categories from "./Views/Categories";
-import {db} from './Componentes/FirebaseConfig/FirebaseConfig';
+// import {db} from './FirebaseConfig/FirebaseConfig';
 
 const salmonColor = "salmon";
 
