@@ -22,7 +22,7 @@ const Antojos = () => {
   return (
     <div>
       {antojos.map((data) => {
-        return <ItemCard antojos={data} key={data.id} />;
+        return <ItemCard data={data} key={data.id} />;
       })}
       ;
     </div>
