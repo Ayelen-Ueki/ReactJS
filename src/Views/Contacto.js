@@ -1,7 +1,9 @@
-import React, { useState, Form, Input, FormGroup, Label, Button } from "react";
+import React, { useState } from "react";
+import { Form, Input, FormGroup, Label, Button } from "reactstrap";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../FirebaseConfig/FirebaseConfig";
 import MessageSuccess from "../Componentes/MessageSuccess/MessageSuccess";
+import "./Contacto.css"
 
 const initialState = {
   name: "",
@@ -11,7 +13,7 @@ const initialState = {
 
 const Contacto = () => {
   const [contacto, setContacto] = useState(initialState);
-  const[contactoID, setContactoId] =useState('')
+  const [contactoID, setContactoId] = useState("");
 
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -21,13 +23,13 @@ const Contacto = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const docRef = await addDoc(collection(db, "contacto"), {
-      contacto
+      contacto,
     });
     setContactoId(docRef.id);
     setContacto(initialState);
   };
   return (
-    <Form inline onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} className="Form">
       <FormGroup className="mb-2 me-sm-2 mb-sm-0">
         <Label className="me-sm-2" for="exampleName">
           Name
@@ -68,7 +70,7 @@ const Contacto = () => {
         />
       </FormGroup>
       <Button>Submit</Button>
-      {contactoID && <MessageSuccess contactoID={contactoID}/>}
+      {contactoID && <MessageSuccess contactoID={contactoID} />}
     </Form>
   );
 };

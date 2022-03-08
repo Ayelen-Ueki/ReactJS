@@ -1,4 +1,4 @@
-import React, {Alert} from "react";
+import {Alert} from "reactstrap";
 
 const MessageSuccess = (contactoID) => {
   return (

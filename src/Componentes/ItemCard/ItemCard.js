@@ -1,6 +1,6 @@
 import { Card, CardBody, CardTitle, CardText, CardImg } from "reactstrap";
 
-const ItemCard = ({ greetings, cardDescription, data}) => {
+const ItemCard = ({ greetings, data}) => {
     return (
       <div>
         <h4> {greetings} </h4>
@@ -9,7 +9,6 @@ const ItemCard = ({ greetings, cardDescription, data}) => {
           <CardBody>
             <CardTitle tag="h5">{data.producto}</CardTitle>
             <CardText> ${data.precio}</CardText>
-            <CardText> {cardDescription}</CardText>
           </CardBody>
         </Card>
       </div>

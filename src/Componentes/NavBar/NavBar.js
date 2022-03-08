@@ -34,6 +34,12 @@ const NavBar = ({ color }) => {
                 <DropdownItem>
                   <Link to="/recetas">Recetas</Link>
                 </DropdownItem>
+                <DropdownItem>
+                  <Link to="/categorias/:categoria">Categorías</Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link to="/contacto">Contacto</Link>
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Navbar>
