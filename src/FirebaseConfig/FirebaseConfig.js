@@ -1,16 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore/lite';
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBOK7x5N5UnjY4TDqndzH7l5tvdNIsWFRc",
-  authDomain: "todo-app-e3cf0.firebaseapp.com",
-  projectId: "todo-app-e3cf0",
-  storageBucket: "todo-app-e3cf0.appspot.com",
-  messagingSenderId: "940016886081",
-  appId: "1:940016886081:web:91686613f16b1b1f8001c0",
-  measurementId: "G-JHPC7TP12K"
+  apiKey: "AIzaSyBafTwR-98nzkiwaGjWvWUxtaBHcxd4Lm0",
+  authDomain: "feelinpasteleria.firebaseapp.com",
+  projectId: "feelinpasteleria",
+  storageBucket: "feelinpasteleria.appspot.com",
+  messagingSenderId: "588262740217",
+  appId: "1:588262740217:web:9f0f511f69009f105e9228"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-export const db = getFirestore (firebaseApp);
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore (app);
 

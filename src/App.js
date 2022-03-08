@@ -9,7 +9,7 @@ import Recetas from "./Views/Recetas";
 import Categories from "./Views/Categories";
 import Antojos from "./Views/Antojos";
 import Contacto from "./Views/Contacto";
-// import {db} from './FirebaseConfig/FirebaseConfig';
+import CategoriesList from "./Views/CategoriesList";
 
 const salmonColor = "salmon";
 
@@ -19,6 +19,7 @@ const App = () => {
       <Router>
         <div className="App">
           <NavBar color={salmonColor} />
+          <CategoriesList/>
         </div>
         <Routes>
           <Route path="/" element={<Antojos />} />
